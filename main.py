@@ -114,7 +114,6 @@ while (display.isNotDone()):
                 writeAndReload("Attended!")
             else:
                 writeAndReload("Presented!")
-            # url = string.replace(url, 'verify', 'unverify')
             u = string.replace(url, 'REPLACE_WITH_TOKEN', code)
             u = string.replace(u, 'REPLACE_WITH_MODE', mode)
             urls.append(u)
