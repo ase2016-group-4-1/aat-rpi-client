@@ -123,7 +123,7 @@ while (display.isNotDone()):
             if(server_is_accessible()):
                 for ur in urls:
                     r = requests.post(ur, data={}, auth=('Steve', 'dummy'))
-                    urls.remove(ur)
+                urls = []
         elif(selectedLecture == "" and selectedGroup == ""):
             writeAndReload("Please select\nlecture & group!")
         elif(selectedLecture == ""):
