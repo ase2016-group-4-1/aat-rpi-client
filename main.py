@@ -118,17 +118,11 @@ while (display.isNotDone()):
             u = string.replace(url, 'REPLACE_WITH_TOKEN', code)
             u = string.replace(u, 'REPLACE_WITH_MODE', mode)
             urls.append(u)
-            text_file = open("out.txt", "w")
-            text_file.write(u)
-            text_file.close()
             previousMode = mode
             previousCode = code
             if(server_is_accessible()):
                 for ur in urls:
                     r = requests.post(ur, data={}, auth=('Steve', 'dummy'))
-                    text_file = open("out.txt", "w")
-                    text_file.write('' + str(r.status_code))
-                    text_file.close()
                     urls.remove(ur)
         elif(selectedLecture == "" and selectedGroup == ""):
             writeAndReload("Please select\nlecture & group!")
